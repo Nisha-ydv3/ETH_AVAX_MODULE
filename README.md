@@ -8,11 +8,11 @@ solidity ^0.8.17
 This project is licensed under MIT License.
 
 ## SMART CONTRACT DETAILS
-### decreaseAmount(uint256 amount)
+### decreaseAmount(int amount)
 It decreases the initAmount by specified amount before executing the operation. It checks if the input amount > 0 using assert statement.
 If the amount > initAmount , it reverts the transaction with an error message.
 
-### increaseAmount(uint256 amount)
+### increaseAmount(int amount)
 This function increases the initAmount by the specified amount.It uses a require statement to ensure that the input amount is greater than or equal to zero. If the amount is negative , the transaction is reverted with an error message.
 
 ### viewAmount() 
