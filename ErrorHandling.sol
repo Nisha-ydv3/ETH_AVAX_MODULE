@@ -2,10 +2,10 @@
 pragma solidity ^0.8.17;
 
 contract ErrorHandling {
-    uint256 initAmount = 5000;
+    int initAmount = 5000;
 
-    function decreaseAmount(uint256 amount) public returns (uint256) {
-        assert(amount > 0);
+    function decreaseAmount(int amount) public returns (int) {
+        assert(amount > 10);
 
         if (amount > initAmount) {
             revert("Amount should be less than initial amount");
@@ -15,13 +15,13 @@ contract ErrorHandling {
         return initAmount;
     }
 
-    function increaseAmount(uint256 amount) public returns (uint256) {
+    function increaseAmount(int amount) public returns (int) {
         require(amount >= 0, "Value should be greater than or equal to 0");
         initAmount += amount;
         return initAmount;
     }
 
-    function viewAmount() public view returns (uint256) {
+    function viewAmount() public view returns (int) {
         return initAmount;
     }
 }
